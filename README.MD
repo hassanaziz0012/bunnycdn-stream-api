@@ -65,3 +65,6 @@ Now, you are ready to start using the API. Here are some examples on how to use 
     moments = [moment_1, moment_2]
 
     video.update_moments(moments) # Update video moments.
+
+## About me
+I'm a freelance developer. Wanna see more of my work? See my website here: https://www.hassandev.me
