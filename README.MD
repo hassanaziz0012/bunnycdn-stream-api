@@ -9,7 +9,7 @@ Install the package from PyPi. (Link: https://pypi.org/project/bunnycdn-api-wrap
     pip install bunnycdn-api-wrapper
 
 Now, you are ready to start using the API. Here are some examples on how to use the API:
-```
+```python
 # Libraries
 # Connecting the video libraries.
 from bunny.stream.library import Library
