@@ -6,7 +6,9 @@ It currently only supports the Stream API, but I do plan on covering the Edge St
 ## Getting Started
 Install the package from PyPi. (Link: https://pypi.org/project/bunnycdn-api-wrapper/1.0.14/)
 
-    pip install bunnycdn-api-wrapper
+```bash
+pip install bunnycdn-api-wrapper
+```
 
 Now, you are ready to start using the API. Here are some examples on how to use the API:
 ```python
