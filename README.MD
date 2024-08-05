@@ -24,8 +24,9 @@ collections = lib.get_collections()
 # Creating and Uploading a new video to Bunny.
 from pathlib import Path
 lib.create_new_video(title="New Video", filepath=Path("path/to/file.mp4"))
+```
 
-
+```python
 # Collections
 from bunny.stream.collection import Collection
 your_collection = Collection(library=lib, collection_id="COLLECTION ID") # Getting the collection.
@@ -36,8 +37,9 @@ Collection.get_all_collections(library=lib) # Get all collections in a library.
 Collection.search_collections(library=lib, title="Search term") # Search collections in a library for the "title" specified.
 
 Collection.create_new_collection(library=lib, collection_name="New Collection") # Creating new collections.
+```
 
-
+```python
 # Videos
 from bunny.stream.video import Video
 video = Video(library=lib, video_id="VIDEO ID") # Getting video.
