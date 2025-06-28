@@ -6,73 +6,62 @@ It currently only supports the Stream API, but I do plan on covering the Edge St
 ## Getting Started
 Install the package from PyPi. (Link: https://pypi.org/project/bunnycdn-api-wrapper/1.0.14/)
 
-```bash
-pip install bunnycdn-api-wrapper
-```
+    pip install bunnycdn-api-wrapper
 
 Now, you are ready to start using the API. Here are some examples on how to use the API:
-```python
-# Libraries
-# Connecting the video libraries.
-from bunny.stream.library import Library
-lib = Library(LIBRARY_ID=12345, API_KEY="abcd1234")
 
-# Get all videos and collections in a library.
-videos = lib.get_library_videos()
-collections = lib.get_collections()
+    # Libraries
+    # Connecting the video libraries.
+    from bunny.stream.library import Library
+    lib = Library(LIBRARY_ID=12345, API_KEY="abcd1234")
 
-# Creating and Uploading a new video to Bunny.
-from pathlib import Path
-lib.create_new_video(title="New Video", filepath=Path("path/to/file.mp4"))
-```
+    # Get all videos and collections in a library.
+    videos = lib.get_library_videos()
+    collections = lib.get_collections()
 
-```python
-# Collections
-from bunny.stream.collection import Collection
-your_collection = Collection(library=lib, collection_id="COLLECTION ID") # Getting the collection.
-your_collection.delete() # Delete a collection.
+    # Creating and Uploading a new video to Bunny.
+    from pathlib import Path
+    lib.create_new_video(title="New Video", filepath=Path("path/to/file.mp4"))
 
-Collection.get_all_collections(library=lib) # Get all collections in a library.
 
-Collection.search_collections(library=lib, title="Search term") # Search collections in a library for the "title" specified.
+    # Collections
+    from bunny.stream.collection import Collection
+    your_collection = Collection(library=lib, collection_id="COLLECTION ID") # Getting the collection.
+    your_collection.delete() # Delete a collection.
 
-Collection.create_new_collection(library=lib, collection_name="New Collection") # Creating new collections.
-```
+    Collection.get_all_collections(library=lib) # Get all collections in a library.
 
-```python
-# Videos
-from bunny.stream.video import Video
-video = Video(library=lib, video_id="VIDEO ID") # Getting video.
+    Collection.search_collections(library=lib, title="Search term") # Search collections in a library for the "title" specified.
 
-video.rename("Video title updated") # Rename the video.
+    Collection.create_new_collection(library=lib, collection_name="New Collection") # Creating new collections.
 
-video.reencode() # Re-encode the video.
 
-video.update_thumbnail(thumbnail_url="https://www.images.com/thumbnail.jpg") # Updating video thumbnail.
+    # Videos
+    from bunny.stream.video import Video
+    video = Video(library=lib, video_id="VIDEO ID") # Getting video.
 
-video.delete() # Delete video from Bunny.
+    video.rename("Video title updated") # Rename the video.
 
-# Updating video chapters
-from bunny.stream.chapter import Chapter
-prologue = Chapter("Prologue", start=0, end=60)
-epilogue = Chapter("Epilogue", start=240, end=300)
+    video.reencode() # Re-encode the video.
 
-chapters = [prologue, epilogue]
+    video.update_thumbnail(thumbnail_url="https://www.images.com/thumbnail.jpg") # Updating video thumbnail.
 
-video.update_chapters(chapters) # Update video chapters.
+    video.delete() # Delete video from Bunny.
 
-# Updating video moments
-from bunny.stream.moment import Moment
-moment_1 = Moment("Label", timestamp=225)
-moment_2 = Moment("Label", timestamp=300)
+    # Updating video chapters
+    from bunny.stream.chapter import Chapter
+    prologue = Chapter("Prologue", start=0, end=60)
+    epilogue = Chapter("Epilogue", start=240, end=300)
 
-moments = [moment_1, moment_2]
+    chapters = [prologue, epilogue]
 
-video.update_moments(moments) # Update video moments.
-```
+    video.update_chapters(chapters) # Update video chapters.
 
-## Author
-- Hassan Aziz
-- Web Developer and Designer
-- Website: https://www.hassandev.me
-- Check out my other [web projects](https://www.hassandev.me/projects)
+    # Updating video moments
+    from bunny.stream.moment import Moment
+    moment_1 = Moment("Label", timestamp=225)
+    moment_2 = Moment("Label", timestamp=300)
+
+    moments = [moment_1, moment_2]
+
+    video.update_moments(moments) # Update video moments.
